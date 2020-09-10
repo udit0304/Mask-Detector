@@ -3,29 +3,6 @@ import os
 from models import darknet
 import configparser
 
-
-# def convertBack(x, y, w, h):
-#     xmin = int(round(x - (w / 2)))
-#     xmax = int(round(x + (w / 2)))
-#     ymin = int(round(y - (h / 2)))
-#     ymax = int(round(y + (h / 2)))
-#     return xmin, ymin, xmax, ymax
-#
-#
-# def convertdetections(detections):
-#     detections2 = []
-#     for detection in detections:
-#         if detection[0] != b'person':  # maybe dont want only the people so could remove it
-#             continue
-#         x, y, w, h = detection[2][0], \
-#                      detection[2][1], \
-#                      detection[2][2], \
-#                      detection[2][3]
-#         detections2.append(convertBack(
-#             float(x), float(y), float(w), float(h)))
-#     return detections2
-
-
 class Yolo:
     def __init__(self, ini_file, resize=False):
         self.classNames = None
