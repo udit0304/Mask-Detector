@@ -24,7 +24,7 @@ class myThread(threading.Thread):
             threadLimiter.release()
 
 
-threadLimiter = threading.BoundedSemaphore(2)
+threadLimiter = threading.BoundedSemaphore(1)
 
 
 def main(video, pmd):
@@ -49,12 +49,12 @@ def main(video, pmd):
 
 
 if __name__ == "__main__":
-    start = time.time()
     generate_config_files()
     videos = glob.glob("./test/*.mp4")
     threads = []
     running_t = []
     pmd = MaskDetector(detector='yolo', config='cfg/yolov4_mask.ini', resize=False)
+    start = time.time()
     for video in videos:
         t = myThread(video, pmd)
         t.start()
