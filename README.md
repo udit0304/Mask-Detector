@@ -1,4 +1,5 @@
 # Mask detection Yolov4
+* Detector to detect if a peron is wearing mask or not
 * Place video in .mp4 format inside test folder and run main.py
 * Output videos are then stored in detection folder.
 
